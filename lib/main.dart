@@ -1,4 +1,4 @@
-import 'package:esewa_integration/dashboard.dart';
+import 'package:esewa_integration/Views/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,8 +15,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Esewa Integration',
       theme: ThemeData(
-        // This is the theme of your application.
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),

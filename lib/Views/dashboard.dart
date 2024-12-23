@@ -1,3 +1,4 @@
+import 'package:esewa_integration/functions/esewa.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -12,25 +13,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
     {
       'id': '#1101',
       'name': 'Product 1',
-      'price': 10.0,
+      'price': '10.0',
       'image': 'assets/promo-banner-1.png'
     },
     {
       'id': '#1102',
       'name': 'Product 2',
-      'price': 10.0,
+      'price': '20.0',
       'image': 'assets/promo-banner-2.png'
     },
     {
       'id': '#1103',
       'name': 'Product 3',
-      'price': 10.0,
+      'price': '30.0',
       'image': 'assets/promo-banner-3.png'
     },
     {
       'id': '#1104',
       'name': 'Product 4',
-      'price': 10.0,
+      'price': '10.0',
       'image': 'assets/promo-banner-1.png'
     },
   ];
@@ -73,7 +74,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   // }
 
   // void onFailure(PaymentFailureModel success) {}
-  void onCancel() {}
+  //void onCancel() {}
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +123,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           ),
                           const SizedBox(height: 5),
                           Text(
-                            'Rs. ${product['price'].toStringAsFixed(2)}',
+                            'Rs. ${product['price']}',
                             style: const TextStyle(
                               fontSize: 16,
                               color: Color.fromARGB(255, 155, 150, 150),
@@ -132,7 +133,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Esewa esewa = Esewa();
+                        esewa.pay(
+                            product['id'], product['name'], product['price']);
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor:
                             const Color.fromARGB(255, 181, 147, 243),
