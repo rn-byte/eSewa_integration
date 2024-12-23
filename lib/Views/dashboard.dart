@@ -135,8 +135,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ElevatedButton(
                       onPressed: () {
                         Esewa esewa = Esewa();
-                        esewa.pay(
-                            product['id'], product['name'], product['price']);
+                        esewa.pay(product['id'], product['name'],
+                            product['price'], context);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor:

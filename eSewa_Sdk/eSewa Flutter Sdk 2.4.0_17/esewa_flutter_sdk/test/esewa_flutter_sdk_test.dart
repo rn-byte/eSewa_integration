@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:esewa_flutter_sdk/constants.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -16,5 +18,4 @@ void main() {
   tearDown(() {
     channel.setMockMethodCallHandler(null);
   });
-
 }
